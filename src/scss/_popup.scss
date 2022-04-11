@@ -25,6 +25,10 @@
       border-radius: 10px;
       width: 100%;
       max-width: 575px;
+      @media (max-width: 575.98px) {
+         margin: 30px 10px;
+         padding: 40px 10px;
+      }
    }
    .popup__close {
       position: absolute;
@@ -37,6 +41,10 @@
       align-items: center;
       font-size: 18px;
       color: $gray;
+      @media (max-width: 575.98px) {
+         top: 10px;
+         right: 20px;
+      }
    }
 }
 // popup end
@@ -49,6 +57,9 @@
 
    &__inputs {
       margin-bottom: 45px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 30px;
+      }
    }
 
    &__input {
@@ -71,6 +82,9 @@
       width: fit-content;
       margin: 0 auto;
       margin-bottom: 50px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 30px;
+      }
    }
 
    &__btn-save {
@@ -98,6 +112,9 @@
 
    &__inputs {
       margin-bottom: 30px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 20px;
+      }
    }
 
    &__input {
@@ -113,6 +130,9 @@
       width: fit-content;
       margin: 0 auto;
       margin-bottom: 42px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 30px;
+      }
    }
 
    &__btn-save {

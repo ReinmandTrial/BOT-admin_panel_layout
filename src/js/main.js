@@ -46,4 +46,17 @@ $(document).ready(function () {
          $('.select').removeClass('active');
       }
    })
+
+   // burger
+   $('.header__burger').on('click', function () {
+      $(this).toggleClass('open');
+      $('.sidebar').toggleClass('open');
+   })
+   $(document).on('click', function (e) {
+      if (!e.target.closest('.header__burger') && !e.target.closest('.sidebar')) {
+         $('.sidebar').removeClass('open');
+         $('.header__burger').removeClass('open');
+      }
+   })
+   // burger end
 })

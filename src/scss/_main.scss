@@ -4,6 +4,9 @@
    &__leftside {
       background: url("../img/login-bg.png") bottom center no-repeat;
       flex: 1 1 auto;
+      @media (max-width: 991.98px) {
+         display: none;
+      }
    }
 
    &__logo {
@@ -19,6 +22,9 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      @media (max-width: 991.98px) {
+         width: 100%;
+      }
    }
 
    &__form {
@@ -27,6 +33,12 @@
       box-shadow: 0px 2px 9px rgba(35, 31, 32, 0.13);
       background: #fff;
       padding: 43px;
+      margin: 15px;
+      @media (max-width: 575.98px) {
+         padding: 40px 15px;
+         margin: unset;
+         box-shadow: none;
+      }
    }
 
    &__title {
@@ -55,6 +67,13 @@
 
    &__container {
       padding: 40px 40px 150px;
+      @media (max-width: 991.98px) {
+         padding: 40px;
+      }
+      @media (max-width: 575.98px) {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
    }
 
    &__form {
@@ -68,15 +87,30 @@
       text-align: center;
       color: $blue2;
       margin-bottom: 60px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 30px;
+      }
    }
 
    &__inputs {
       margin-bottom: 60px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 30px;
+      }
    }
 
    &__input {
+      @media (max-width: 575.98px) {
+         .input__flex-box {
+            flex-direction: column;
+            row-gap: 10px;
+         }
+      }
       &:not(:last-child) {
          margin-bottom: 38px;
+         @media (max-width: 575.98px) {
+            margin-bottom: 20px;
+         }
       }
    }
 
@@ -86,6 +120,9 @@
 
    &__input--timer {
       flex: 0 0 125px;
+      @media (max-width: 575.98px) {
+         flex: none;
+      }
    }
 
    &__btn {
@@ -98,6 +135,10 @@
    padding: 20px 40px;
    border-radius: 5px;
    font-family: "Inter";
+   @media (max-width: 575.98px) {
+      padding-left: 10px;
+      padding-right: 10px;
+   }
    &.fill {
       .add-file__more {
          flex-direction: row-reverse;
@@ -168,6 +209,13 @@
    &__content {
       flex: 1 1 auto;
       padding: 40px 30px 70px;
+      @media (max-width: 991.98px) {
+         padding: 40px;
+      }
+      @media (max-width: 575.98px) {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
    }
 
    &__section {
@@ -210,6 +258,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       gap: 30px;
+      @media (max-width: 575.98px) {
+         grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      }
    }
 
    &__card {
@@ -223,6 +274,12 @@
    display: flex;
    flex-direction: column;
    row-gap: 22px;
+   @media (max-width: 575.98px) {
+      padding: 20px 10px;
+   }
+   .select__main {
+      width: auto;
+   }
    &--green {
       border-color: #27ae60;
    }
@@ -306,6 +363,7 @@
       font-weight: 500;
       font-size: 12px;
       transition: 0.2s;
+      text-align: left;
       &:hover {
          background: $gray3;
       }
@@ -330,6 +388,7 @@
    }
 
    &__item {
+      width: 100%;
       transition: 0.2s;
       padding: 8px 9px;
       display: block;
@@ -347,11 +406,21 @@
 .page-chat {
    &__content {
       padding: 40px 40px 40px 30px;
+      @media (max-width: 1199.98px) {
+         padding: 40px;
+      }
+      @media (max-width: 575.98px) {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
       flex: 1 1 auto;
       height: 100vh;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      @media (max-width: 991.98px) {
+         height: unset;
+      }
    }
 
    &__btn-back {
@@ -378,9 +447,12 @@
 
    &__flex-container {
       display: flex;
-      column-gap: 30px;
+      gap: 30px;
       flex: 1 1 auto;
       overflow: hidden;
+      @media (max-width: 991.98px) {
+         flex-direction: column;
+      }
    }
 
    &__chat {
@@ -388,25 +460,40 @@
       width: calc(64% - 15px);
       display: flex;
       flex-direction: column;
+      @media (max-width: 991.98px) {
+         width: 100%;
+      }
    }
 
    &__sidebar {
       height: 100%;
-      width: calc(36% - 15px);
+      width: calc(36% + 5px);
       overflow-y: auto;
       margin-right: -20px;
       padding-right: 20px;
+      @media (max-width: 991.98px) {
+         width: 100%;
+         padding-right: unset;
+         margin-right: unset;
+         overflow-y: unset;
+      }
    }
 
    &__sidebar-block {
       &:not(:last-child) {
          margin-bottom: 42px;
+         @media (max-width: 767.98px) {
+            margin-bottom: 20px;
+         }
       }
    }
 
    &__title {
       color: $blue2;
       margin-bottom: 16px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 5px;
+      }
    }
 
    &__question {
@@ -445,6 +532,9 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      @media (max-width: 991.98px) {
+         max-height: 90vh;
+      }
    }
 
    &__head {
@@ -490,6 +580,10 @@
       flex-direction: column;
       justify-content: flex-end;
       row-gap: 25px;
+      @media (max-width: 575.98px) {
+         padding-left: 10px;
+         padding-right: 10px;
+      }
    }
 
    &__message {
@@ -500,6 +594,9 @@
       flex: none;
       border-radius: 0 0 25px 25px;
       padding: 15px;
+      @media (max-width: 575.98px) {
+         padding: 15px 5px;
+      }
    }
 
    &__new-message {
@@ -546,10 +643,18 @@
    align-items: flex-end;
    &--in {
       margin-right: 40px;
+      @media (max-width: 575.98px) {
+         margin-right: 10px;
+      }
    }
    &--out {
+      margin-left: 40px;
       padding: 10px;
       flex-direction: row-reverse;
+      @media (max-width: 575.98px) {
+         margin-left: 10px;
+         padding: unset;
+      }
       .message__text-block {
          background: $blue;
       }
@@ -558,6 +663,7 @@
       }
    }
    &__photo {
+      flex: none;
       display: block;
       width: 45px;
       height: 45px;
@@ -589,14 +695,28 @@
 .statistics {
    &__content {
       padding: 40px 40px 40px 30px;
+      @media (max-width: 1199.98px) {
+         padding: 40px;
+      }
+      @media (max-width: 575.98px) {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
       flex: 1 1 auto;
       display: flex;
       column-gap: 30px;
+      @media (max-width: 991.98px) {
+         flex-direction: column;
+         row-gap: 20px;
+      }
    }
 
    &__leftside {
       width: 250px;
       flex: none;
+      @media (max-width: 991.98px) {
+         width: unset;
+      }
    }
 
    &__title {
@@ -605,11 +725,25 @@
    }
 
    &__socials {
+      @media (max-width: 991.98px) {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+      }
    }
 
    &__socials-item {
+      @media (max-width: 991.98px) {
+         width: 250px;
+      }
+      @media (max-width: 575.98px) {
+         margin: 0 auto;
+      }
       &:not(:last-child) {
          margin-bottom: 30px;
+         @media (max-width: 991.98px) {
+            margin-bottom: unset;
+         }
       }
    }
 
@@ -619,6 +753,18 @@
 
    &__table {
       width: 100%;
+      margin-bottom: 30px;
+   }
+   &__calendar {
+      display: flex;
+      column-gap: 30px;
+      @media (max-width: 575.98px) {
+         row-gap: 20px;
+         flex-direction: column;
+      }
+   }
+   &__calendar-input {
+      flex: 1 1 auto;
    }
 }
 .card-socials {
@@ -687,6 +833,19 @@
 .table {
    border-spacing: 0px;
    font-size: 14px;
+   @media (max-width: 575.98px) {
+      margin-left: -10px;
+      margin-right: -10px;
+      width: stretch;
+   }
+   .select__main {
+      width: auto;
+   }
+   .select button {
+      @media (max-width: 575.98px) {
+         font-size: 10px !important;
+      }
+   }
    &__head {
       // background: $gray3;
       margin-bottom: 12px;
@@ -702,6 +861,9 @@
       background: $gray3;
       display: flex;
       align-items: center;
+      @media (max-width: 575.98px) {
+         padding: 10px 5px;
+      }
       &:not(:first-child) {
          border-top: 1px solid $gray2;
          // padding-top: 16px;
@@ -720,17 +882,33 @@
    &__item {
       padding-right: 20px;
       border: none;
+      @media (max-width: 575.98px) {
+         padding-right: 5px;
+         font-size: 10px;
+      }
       &:nth-child(1) {
          width: 32%;
+         @media (max-width: 575.98px) {
+            width: 40%;
+         }
       }
       &:nth-child(2) {
          width: 31%;
+         @media (max-width: 575.98px) {
+            width: 29%;
+         }
       }
       &:nth-child(3) {
          width: 25%;
+         @media (max-width: 575.98px) {
+            width: 16%;
+         }
       }
       &:nth-child(4) {
          width: 12%;
+         @media (max-width: 575.98px) {
+            width: 15%;
+         }
       }
    }
 }
@@ -739,6 +917,18 @@
    &__content {
       flex: 1 1 auto;
       padding: 40px 40px 40px 30px;
+      @media (max-width: 1199.98px) {
+         padding: 40px;
+      }
+      @media (max-width: 575.98px) {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
+      @media (max-width: 575.98px) {
+         overflow: hidden;
+         padding-left: 15px;
+         padding-right: 15px;
+      }
    }
 
    &__tabs {
@@ -778,11 +968,20 @@
       column-gap: 40px;
       align-items: flex-end;
       margin-bottom: 22px;
+      @media (max-width: 991.98px) {
+         flex-direction: column;
+         align-items: flex-start;
+         row-gap: 20px;
+      }
    }
 
    &__menu-item {
       &:not(:first-child) {
          flex: 1 1 auto;
+         @media (max-width: 991.98px) {
+            width: 100%;
+            max-width: 600px;
+         }
       }
    }
 
@@ -799,6 +998,10 @@
    &__menu-row-btns {
       display: flex;
       column-gap: 22px;
+      @media (max-width: 991.98px) {
+         flex-direction: column;
+         row-gap: 20px;
+      }
    }
 
    &__menu-btn-cancel {
@@ -810,6 +1013,10 @@
    &__menu-btn-add {
       width: fit-content;
       margin-left: auto;
+      @media (max-width: 991.98px) {
+         margin-left: unset;
+         margin-top: 15px;
+      }
    }
 
    &__submenu {
@@ -819,14 +1026,26 @@
       display: flex;
       column-gap: 30px;
       align-items: flex-end;
+      @media (max-width: 991.98px) {
+         flex-direction: column;
+         row-gap: 50px;
+         align-items: flex-start;
+      }
    }
 
    &__submenu-leftside {
       flex: 1 1 auto;
+      @media (max-width: 991.98px) {
+         width: 100%;
+         max-width: 600px;
+      }
    }
 
    &__submenu-btn {
       width: fit-content;
+      @media (max-width: 575.98px) {
+         width: 100%;
+      }
       &:not(:last-child) {
          margin-bottom: 18px;
       }
@@ -842,33 +1061,57 @@
          font-size: 16px;
       }
    }
+   &__submenu-edit-btn-add-link {
+      width: fit-content;
+      margin-bottom: 20px;
+   }
    &__submenu-edit-btns {
       display: flex;
       column-gap: 22px;
+      @media (max-width: 575.98px) {
+         flex-direction: column;
+         row-gap: 15px;
+      }
       button {
          width: fit-content;
+         @media (max-width: 575.98px) {
+            width: 100%;
+         }
       }
    }
 
    &__submenu-rightside {
+      @media (max-width: 575.98px) {
+         width: 100%;
+      }
    }
 
    &__submenu-btn-add {
       width: fit-content;
+      @media (max-width: 575.98px) {
+         margin: 0 auto;
+      }
    }
 }
 .tabs {
    &__head {
       margin-bottom: 60px;
       display: flex;
-      column-gap: 20px;
+      gap: 20px;
       align-items: center;
+      @media (max-width: 767.98px) {
+         flex-wrap: wrap;
+         margin-bottom: 30px;
+      }
    }
 
    &__head-item {
       padding-bottom: 6px;
       position: relative;
       transition: 0.2s;
+      @media (max-width: 767.98px) {
+         width: max-content;
+      }
       &:hover {
          color: $blue2;
       }
@@ -897,6 +1140,13 @@
    &__content {
       flex: 1 1 auto;
       padding: 40px 40px 40px 30px;
+      @media (max-width: 1199.98px) {
+         padding: 40px;
+      }
+      @media (max-width: 575.98px) {
+         padding-left: 15px;
+         padding-right: 15px;
+      }
    }
 
    &__tabs {

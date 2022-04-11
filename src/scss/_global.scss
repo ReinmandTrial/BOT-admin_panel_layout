@@ -75,6 +75,104 @@ textarea {
 		object-fit: contain;
 	}
 }
+.logo-row {
+	width: 245px;
+	height: 28px;
+}
+$color: $black;
+
+$height-icon: 14px;
+$width-line: 25px;
+$height-line: 3px;
+
+$transition-time: 0.4s;
+$rotation: 45deg;
+$translateY: ($height-icon / 2);
+$translateX: 0;
+
+.burger-icon {
+	width: $width-line;
+	height: $height-icon;
+	position: relative;
+	display: block;
+
+	&__line {
+		display: block;
+		background: $color;
+		width: $width-line;
+		height: $height-line;
+		position: absolute;
+		left: 0;
+		border-radius: ($height-line / 2);
+		transition: all $transition-time;
+
+		&-1 {
+			top: 0;
+		}
+		&-2 {
+			top: 50%;
+		}
+		&-3 {
+			top: 100%;
+		}
+	}
+	&:hover {
+		.burger-icon__line {
+			background: $gray;
+		}
+		.burger-icon__line-1 {
+			transform: translateY($height-line / 2 * -1);
+		}
+		.burger-icon__line-3 {
+			transform: translateY($height-line / 2);
+		}
+	}
+}
+.header {
+	height: 80px;
+	background: $white;
+	box-shadow: 0px 4px 25px rgba(192, 183, 201, 0.3);
+	position: relative;
+	// z-index: 100;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	@media (min-width: 1200px) {
+		display: none;
+	}
+	@media (max-width: 767.98px) {
+		height: 50px;
+		padding: 10px;
+	}
+	&__burger {
+		position: relative;
+		z-index: 150;
+		display: block;
+		padding: 5px;
+		&.open,
+		&:active {
+			.burger-icon__line-1 {
+				transform: translateY($translateY) translateX($translateX) rotate($rotation);
+			}
+			.burger-icon__line-2 {
+				opacity: 0;
+			}
+			.burger-icon__line-3 {
+				transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+			}
+		}
+	}
+	&__logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		@media (max-width: 767.98px) {
+			width: 150px;
+			height: auto;
+		}
+	}
+}
 .input {
 	width: 100%;
 	padding: 14px 11px;
@@ -166,6 +264,19 @@ textarea {
 	top: 0;
 	bottom: 0;
 	height: 100vh;
+	@media (max-width: 1199.98px) {
+		position: fixed;
+		left: -290px;
+		top: 0;
+		z-index: 100;
+		height: unset;
+		min-height: 100vh;
+		transition: 0.4s ease-out;
+		&.open {
+			transition: 0.4s ease-in;
+			left: 0;
+		}
+	}
 	&__wrap {
 		min-height: 100vh;
 		width: 100%;
@@ -173,11 +284,17 @@ textarea {
 		background: #fbfcff;
 		display: flex;
 		flex-direction: column;
+		@media (max-width: 1199.98px) {
+			padding-top: 80px;
+		}
 	}
 
 	&__logo {
 		margin-left: 40px;
 		margin-bottom: 105px;
+		@media (max-width: 1199.98px) {
+			display: none;
+		}
 	}
 
 	&__menu {
@@ -229,6 +346,10 @@ textarea {
 		justify-content: center;
 		align-items: center;
 		padding: 50px 30px;
+		@media (max-width: 575.98px) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 	}
 
 	&__block {
